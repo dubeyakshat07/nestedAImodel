@@ -10,16 +10,15 @@ body {
 
 .layer {
     position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 20px;
-    border: 5px solid #333;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 5px solid #333;
 }
 
 #layer1 {
+    width: 400px;
+    height: 400px;
     background-color: #ff9999;
 }
 
@@ -49,19 +48,36 @@ body {
 
 .hover-box {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    left: 105%; /* Position the box to the right of the layer */
+    width: 200px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
+    border-radius: 8px;
+    display: none;
+    transform: translateY(-50%);
 }
 
-.layer:hover .hover-box {
-    display: flex;
+/* Arrow pointing to the layer */
+.hover-box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+    transform: translateY(-50%);
+}
+
+/* Show the hover-box when the specific layer is hovered over */
+#layer1:hover > #hover1,
+#layer2:hover > #hover2,
+#layer3:hover > #hover3,
+#layer4:hover > #hover4,
+#layer5:hover > #hover5 {
+    display: block;
 }
