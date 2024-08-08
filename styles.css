@@ -48,17 +48,17 @@ body {
 
 .hover-box {
     position: absolute;
-    top: 50%;
-    left: 105%; /* Position the box to the right of the layer */
-    width: 200px;
+    left: 100%; /* Position to the right of the layer */
+    margin-left: 15px; /* Add space between the layer and the box */
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     font-size: 1.2em;
     text-align: center;
     border-radius: 8px;
-    display: none;
+    width: 200px;
     transform: translateY(-50%);
+    display: none;
 }
 
 /* Arrow pointing to the layer */
@@ -66,11 +66,11 @@ body {
     content: '';
     position: absolute;
     top: 50%;
-    right: 100%;
+    left: -10px; /* Position arrow to the left of the hover box */
+    transform: translateY(-50%);
     border-width: 10px;
     border-style: solid;
-    border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
-    transform: translateY(-50%);
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
 }
 
 /* Show the hover-box when the specific layer is hovered over */
